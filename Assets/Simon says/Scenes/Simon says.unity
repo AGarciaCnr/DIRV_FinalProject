@@ -7166,7 +7166,7 @@ MonoBehaviour:
       type: 3}
   m_HeadTransform: {fileID: 958169743}
   m_LeftControllerTransform: {fileID: 1776274503}
-  m_RightControllerTransform: {fileID: 0}
+  m_RightControllerTransform: {fileID: 1949878607}
   m_LeftHandMovementDirection: 0
   m_RightHandMovementDirection: 0
 --- !u!1 &1460260708 stripped
