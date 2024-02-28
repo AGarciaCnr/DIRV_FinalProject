@@ -43,15 +43,14 @@ public class Drink : MonoBehaviour
         _fill = Mathf.Lerp(_initialFill, 0, _time / _emptyingTime);
     }
 
-    private bool IsEmpty()
+    public bool IsEmpty()
     {
         return _fill <= 0;
     }
 
-    private bool IsDumped()
+    public bool IsDumped()
     {
         Vector3 drinkAngles = new Vector3(_transform.eulerAngles.x, 0.0f, _transform.eulerAngles.z);
-        Debug.Log(drinkAngles);
         float currentAngle = Quaternion.Angle(Quaternion.Euler(drinkAngles), Quaternion.identity);
         float dumpAngle = _dumpAngle.Evaluate(_fill);
         return currentAngle > dumpAngle;
