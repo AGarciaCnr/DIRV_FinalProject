@@ -3,7 +3,22 @@ guid: ff22fa28c6d1bbc4288054a2779cd2b0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balcony_01_Mat
+    second: {fileID: 2100000, guid: 949cccd6525791b4685ccbaed563c323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balcony_03_Mat
+    second: {fileID: 2100000, guid: 3ec93c3c33b1cf444ba51ec3c9d8be15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_D_Mat
+    second: {fileID: 2100000, guid: 931294deebf0c62438e961ed325b18b7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -48,7 +63,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
