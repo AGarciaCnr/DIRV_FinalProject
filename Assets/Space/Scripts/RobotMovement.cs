@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class RobotMovement : MonoBehaviour
 {
+
     public GameObject m_astronaut;
     public List<GameObject> m_waypoints;
 
@@ -63,9 +64,5 @@ public class RobotMovement : MonoBehaviour
                 m_currentWaypointIndex = (m_currentWaypointIndex + 1) % m_waypoints.Count;
             }
         }
-
-
-
-
     }
 }

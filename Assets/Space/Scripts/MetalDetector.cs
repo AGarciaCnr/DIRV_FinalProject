@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MetalDetector : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     GameObject m_Detector;
     public GameObject m_Metal;
@@ -25,10 +24,8 @@ public class MetalDetector : MonoBehaviour
         m_Detector = this.gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Mathf.Abs(m_Detector.transform.position.y - m_Metal.transform.position.y) < 0.2)
         RaycastHit hit;
 
         if (Physics.Raycast(m_Detector.transform.position, Vector3.down, out hit, 0.3f))
