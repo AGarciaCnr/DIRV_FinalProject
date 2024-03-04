@@ -14,13 +14,13 @@ public class RaycastInteraction : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, maxDistance))
         {
             Debug.Log("Estas mirando a " + hit.collider.gameObject.name);
-            if (hit.collider.gameObject.GetComponent<Suspect>())
+            if (hit.collider.gameObject.GetComponentInParent<Suspect>())
             {
                 _timer += Time.deltaTime;
 
                 if (_timer >= gazeTime)
                 {
-                    hit.collider.gameObject.GetComponent<Suspect>().found = true;
+                    hit.collider.gameObject.GetComponentInParent<Suspect>().found = true;
                     _timer = 0.0f;
                 }
             }
