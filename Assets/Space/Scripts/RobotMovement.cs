@@ -13,6 +13,7 @@ public class RobotMovement : MonoBehaviour
 
     private int m_currentWaypointIndex = 0;
     private bool m_fleeing = false;
+    private float flee_time= 2f;
 
     void Start()
     {
@@ -30,8 +31,9 @@ public class RobotMovement : MonoBehaviour
             m_agent.destination = fleePosition;
 
             m_fleeing = true;
+            flee_time = 0;
         }
-        else
+        else if (flee_time > 2f)
         {
             if (m_fleeing)
             {
@@ -64,5 +66,7 @@ public class RobotMovement : MonoBehaviour
                 m_currentWaypointIndex = (m_currentWaypointIndex + 1) % m_waypoints.Count;
             }
         }
+
+        flee_time += Time.deltaTime;
     }
 }
