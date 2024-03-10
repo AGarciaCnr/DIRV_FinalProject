@@ -9,6 +9,11 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     public ThrowingTraining axeTrainingScript;
     public KnightPuzzle knightPuzzle;
 
+    [Header("Choose the Scene to Run")]
+    public bool SwordTrainingRun = false;
+    public bool AxeTrainingRun = false;
+    public bool KnightPuzzleTrainingRun = false;
+
     [Header("Settings Times")]
     public float DelayFirstTraining = 0f;
     public float DelaySecondTraining = 0f;
@@ -40,20 +45,20 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        if (!swordTrainingScript.TrainingSwordComplete)
+        if (SwordTrainingRun)
         {
             yield return new WaitForSeconds(DelayFirstTraining);
             StartSwordTraining();
         }
 
-        if (swordTrainingScript.TrainingSwordComplete)
+        if (AxeTrainingRun)
         {
             // Wait for the specified delay
             yield return new WaitForSeconds(DelaySecondTraining);
             StartAxeThrow();
         }
 
-        if (axeTrainingScript.TrainingAxeComplete)
+        if (KnightPuzzleTrainingRun)
         {
             // Wait for the specified delay
             yield return new WaitForSeconds(DelayThirdTraining);
