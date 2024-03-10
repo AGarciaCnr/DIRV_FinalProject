@@ -3,7 +3,22 @@ guid: 8b407b2e647ac7d4e844ef6428873373
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodBox_A
+    second: {fileID: 2100000, guid: 9dd95ffe185a3f049a2e54d75962b5ef, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodBox_A_color_1
+    second: {fileID: 2800000, guid: 89c49ae0e1dbaea45a16612ac4d529a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WoodBox_A_nmap_1
+    second: {fileID: 2800000, guid: 9f927692da0dc5b4899be86ab7595714, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

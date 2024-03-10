@@ -3,7 +3,47 @@ guid: 08174540b7fd48c48adda3509507e0e5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_Wheels.001
+    second: {fileID: 2100000, guid: 8b35cf1b253506f49af6127b4e6f33b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_Wood.001
+    second: {fileID: 2100000, guid: 71c73fe36c442b641b97f0efed44e2a7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_Dstr_Wheel_nmap
+    second: {fileID: 2800000, guid: e27bda8016a359d4eb4874e4f48a2b58, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_Dstr_Wheel_rough
+    second: {fileID: 2800000, guid: 4dd2d0a20edc3f94dafa8558ae29d8d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_color
+    second: {fileID: 2800000, guid: 0575480f4a697434cacb54f5a197385e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_nmap
+    second: {fileID: 2800000, guid: 0d12d0aa7ed42d945bc76c238443f6c0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cart_B_rough
+    second: {fileID: 2800000, guid: c0feb6c00d404c1449e103609353aa95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wheel_color
+    second: {fileID: 2800000, guid: 791376e3e1aec21488e2e1e465d1f8c0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
