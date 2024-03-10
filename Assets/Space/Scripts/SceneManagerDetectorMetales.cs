@@ -18,4 +18,9 @@ public class SceneManagerDetectorMetales : MonoBehaviour
     {
         
     }
+
+    public void win()
+    {
+
+    }
 }

@@ -15,4 +15,9 @@ public class SceneManagerCatchaRobot : MonoBehaviour
     {
         
     }
+
+    public void win()
+    {
+        //Llamar función de ganar
+    }
 }

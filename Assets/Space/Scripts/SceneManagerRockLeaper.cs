@@ -15,4 +15,9 @@ public class SceneManagerRockLeaper : MonoBehaviour
     {
         
     }
+
+    public void win()
+    {
+
+    }
 }
