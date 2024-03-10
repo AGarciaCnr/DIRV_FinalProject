@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2ea4d302c3bec83468cf4b182db2ba9f
+guid: 1d17ed5d513010642aabb0956f0e5500
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -48,7 +48,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -78,7 +78,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
