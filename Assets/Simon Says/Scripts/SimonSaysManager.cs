@@ -94,31 +94,50 @@ public class SimonSaysManager : MonoBehaviour
     private IEnumerator CheckPlayerAction()
     {
         DrinkingObject drinkingObject = _drinkingObject.GetComponent<DrinkingObject>();
-        List<Drink> tempSequence = new List<Drink>(_currentSequence);
+        Queue<Drink> tempSequence = new Queue<Drink>(_currentSequence);
 
-        foreach (Drink drinkSeq in tempSequence)
+        while (tempSequence.Count > 0)
         {
-            yield return new WaitForSeconds(5f);
-            GameObject drink = drinkingObject._drink;
-            if (drink == null) 
-            { 
-                Debug.Log("NULL");
-                _playerCompletedAction = false; 
-                yield break;
-            }
-            if (drinkSeq.gameObject != drink)
+            Drink nextDrink = tempSequence.Peek();
+            float timer = 5f; // Tiempo máximo para beber la bebida correcta
+
+            while (timer > 0)
             {
-                Debug.Log("INCORRECTO: Bebida esperada: " + drinkSeq.gameObject.name + " >> Bebida obtenida: " + drink.name);
-                drinkingObject._drink = null;
+                GameObject drink = drinkingObject._drink;
+                if (drink != null)
+                {
+                    if (nextDrink.gameObject == drink)
+                    {
+                        Debug.Log("CORRECTO: Bebida esperada: " + nextDrink.gameObject.name + " >> Bebida obtenida: " + drink.name);
+                        drinkingObject._drink = null;
+                        tempSequence.Dequeue();
+                        break;
+                    }
+                    else
+                    {
+                        Debug.Log("INCORRECTO: Bebida esperada: " + nextDrink.gameObject.name + " >> Bebida obtenida: " + drink.name);
+                        drinkingObject._drink = null;
+                        _playerCompletedAction = false;
+                        yield break;
+                    }
+                }
+
+                timer -= Time.deltaTime;
+                yield return null;
+            }
+
+            if (timer <= 0)
+            {
+                Debug.Log("Tiempo agotado");
                 _playerCompletedAction = false;
                 yield break;
             }
-            Debug.Log("CORRECTO: Bebida esperada: " + drinkSeq.gameObject.name + " >> Bebida obtenida: " + drink.name);
-            drinkingObject._drink = null;
         }
+
         _playerCompletedAction = true;
         yield break;
     }
+
 
     private void GameRestart()
     {
