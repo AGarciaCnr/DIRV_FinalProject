@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MainLevel.meta
 guid: 7c7c7651326da5043bac20496f7657ef
+========
+guid: 69c11749528a87d469cd1f937f9fa9d4
+>>>>>>>> Develop/MedievalRoom:Assets/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
