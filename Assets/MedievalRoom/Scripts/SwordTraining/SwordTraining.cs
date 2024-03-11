@@ -220,8 +220,15 @@ public class SwordTraining : MonoBehaviour
 
         activeDummies.Clear();
 
+        cameraPos.GetComponentInChildren<FadeScreen>().FadeOut();
+
+        // Wait for the specified delay
+        yield return new WaitForSeconds(2f);
+
         // Advance to the next level
         AdvanceToNextLevel();
+
+        cameraPos.GetComponentInChildren<FadeScreen>().FadeIn();
 
         // Reset the flag when coroutine finishes
         isDestroyingDummies = false;

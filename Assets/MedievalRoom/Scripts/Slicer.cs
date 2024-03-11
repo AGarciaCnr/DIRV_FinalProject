@@ -19,25 +19,34 @@ public class Slicer : MonoBehaviour
             {
                 SlicedHull slicedObject = SliceObject(objectToBeSliced.gameObject, materialAfterSlice);
 
+                // Parent from objectToBeSliced
+                Transform parentObjectTobeSliced = objectToBeSliced.transform.parent.gameObject.transform;
+
+                // Parent GameObject
+                GameObject HullsGameObject = new GameObject("HullGameObject");
+
                 GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, materialAfterSlice);
                 GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, materialAfterSlice);
 
-                GameObject HullsGameObject = new GameObject("HullGameObject");
+                // Parent the upper and lower hull to objectTobeSliced Parent GameObject
+                HullsGameObject.transform.parent = parentObjectTobeSliced;
+
+                // Reset the local pos and rotation of HullsGameObject to zero
+                HullsGameObject.transform.localPosition = Vector3.zero;
+                HullsGameObject.transform.localRotation = Quaternion.identity;
+                HullsGameObject.transform.localScale = new Vector3(1,1,1);
 
                 upperHullGameobject.transform.parent = HullsGameObject.transform;
                 lowerHullGameobject.transform.parent = HullsGameObject.transform;
 
                 // UpperHull same position as objectbesliced
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
+                upperHullGameobject.transform.rotation = objectToBeSliced.transform.rotation;
 
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
+                lowerHullGameobject.transform.rotation = objectToBeSliced.transform.rotation;
 
-                // Parent from objectToBeSliced
 
-                Transform parentObjectTobeSliced = objectToBeSliced.transform.parent.gameObject.transform;
-
-                // Parent the upper and lower hull to objectTobeSliced Parent GameObject
-                HullsGameObject.transform.parent = parentObjectTobeSliced;
 
                 // Get Parent Object and add DummyObject, then Check Hulls is true
                 DummyObject dummyGroup = objectToBeSliced.transform.parent.gameObject.GetComponent<DummyObject>();
@@ -68,6 +77,28 @@ public class Slicer : MonoBehaviour
 
     private SlicedHull SliceObject(GameObject obj, Material crossSectionMaterial = null)
     {
-        return obj.Slice(transform.position, transform.up, crossSectionMaterial);
+        // Check if the slicing is occurring along the X-axis
+        bool isXAxisSlice = Mathf.Abs(transform.right.x) > Mathf.Abs(transform.right.y);
+
+        // Determine the position of the slicing plane based on a point representing the sharper part of the sword
+        Vector3 slicingPosition = transform.position;
+
+        // Use the X-axis as the normal of the slicing plane if the slicing occurs along the X-axis,
+        // otherwise use the Y-axis
+        Vector3 slicingNormal = transform.up;
+
+        // Log whether the slicing is along the X-axis or the Y-axis
+        if (isXAxisSlice)
+        {
+            Debug.Log("Slicing along the X-axis");
+
+        }
+        else
+        {
+            Debug.Log("Slicing along the Y-axis");
+        }
+
+        // Perform the slicing operation using the determined position and normal
+        return obj.Slice(slicingPosition, slicingNormal, crossSectionMaterial);
     }
 }

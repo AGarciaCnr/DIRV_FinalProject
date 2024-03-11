@@ -3,7 +3,17 @@ guid: 85e4298b2b980f945abda26a5b9ca8b0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: STANDARD MTL
+    second: {fileID: 2100000, guid: 273c8d5181b2a384eb0b2ccccacbbc10, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 11-1_MedAsset_BaseColor_1
+    second: {fileID: 2800000, guid: 3b235fbd102380d43b68ff22c797a558, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

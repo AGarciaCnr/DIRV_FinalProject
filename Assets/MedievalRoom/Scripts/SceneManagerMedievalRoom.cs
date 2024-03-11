@@ -23,12 +23,14 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.locateFade();
     }
 
     private void StartSwordTraining()
     {
         swordTrainingScript.gameObject.SetActive(true);
         swordTrainingScript.StartSwordTraning();
+        //GameManager.Instance.GoNextScene;
     }
 
     private void StartKnightPuzzle()
@@ -47,8 +49,15 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     {
         if (SwordTrainingRun)
         {
-            yield return new WaitForSeconds(DelayFirstTraining);
-            StartSwordTraining();
+            if (!swordTrainingScript.TrainingSwordComplete)
+            {
+                yield return new WaitForSeconds(DelayFirstTraining);
+                StartSwordTraining();
+            }
+            else
+            {
+                GameManager.Instance.GoNextScene();
+            }
         }
 
         if (AxeTrainingRun)
