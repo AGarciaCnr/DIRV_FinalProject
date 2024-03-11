@@ -18,14 +18,23 @@ EditorBuildSettings:
     path: Assets/Space/Scenes/Rock Leaper.unity
     guid: 5575460514cdfef4cbbc5fcac27f7ed9
   - enabled: 1
-    path: Assets/Simon Says/Scenes/Simon says.unity
-    guid: fac548b4572a03348b24e0feaadb5ae7
+    path: Assets/Wild West/Simon Says/Scenes/Simon says.unity
+    guid: ff1faefdf4368a5458b26011d0d37878
   - enabled: 1
-    path: Assets/Detective sheriff/Scenes/Sheriff detective.unity
+    path: Assets/Wild West/Detective sheriff/Scenes/Sheriff detective.unity
     guid: 9f1d6ba110fac2742881038f9f531833
   - enabled: 1
-    path: Assets/Gunfighter/Scenes/Gunfighter.unity
+    path: Assets/Wild West/Gunfighter/Scenes/Gunfighter.unity
     guid: e16884a0497385a48bec706009597b7d
+  - enabled: 1
+    path: Assets/MedievalRoom/Scenes/MedievalRoom_Sword.unity
+    guid: 33ea58fccc103ed42b45342262ffcc31
+  - enabled: 1
+    path: Assets/MedievalRoom/Scenes/MedievalRoom_Axe.unity
+    guid: f9bafaad09d5ab749bb0d7318bf70c35
+  - enabled: 1
+    path: Assets/MedievalRoom/Scenes/MedievalRoom_Puzzle.unity
+    guid: 16f82d7fea997214fa38a69b589635fc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
