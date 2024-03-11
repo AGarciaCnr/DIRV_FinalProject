@@ -7487,9 +7487,7 @@ MonoBehaviour:
   - {fileID: 1712218820}
   - {fileID: 2120578539}
   - {fileID: 1291582542}
-  - {fileID: 2103422015}
   - {fileID: 570260903}
-  - {fileID: 1652080050}
   newInteractionLayerMask:
     m_Bits: 268435456
   PuzzleComplete: 0
@@ -7743,17 +7741,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1197434277}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1652080050 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5013828513176163989, guid: 30ba7e3817cb0be4f8d064e7fffb8dec, type: 3}
-  m_PrefabInstance: {fileID: 542733634226922741}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1652080052 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8331857150125464975, guid: 30ba7e3817cb0be4f8d064e7fffb8dec, type: 3}
   m_PrefabInstance: {fileID: 542733634226922741}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652080050}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
@@ -9883,17 +9876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f499e7cfbfede2140a237f8af5a167de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2103422015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1537030071626633273, guid: 30ba7e3817cb0be4f8d064e7fffb8dec, type: 3}
-  m_PrefabInstance: {fileID: 542733634226922741}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2103422017 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6066603567889801848, guid: 30ba7e3817cb0be4f8d064e7fffb8dec, type: 3}
   m_PrefabInstance: {fileID: 542733634226922741}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103422015}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
