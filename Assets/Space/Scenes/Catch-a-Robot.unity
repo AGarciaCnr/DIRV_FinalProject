@@ -1063,6 +1063,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2871854915733156396, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 205146376}
+    - targetCorrespondingSourceObject: {fileID: 2871854915733156396, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980744582}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
 --- !u!1 &901951581
@@ -1226,6 +1229,68 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &980744581
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2010938546}
+    m_Modifications:
+    - target: {fileID: 3758563067619107395, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_Name
+      value: Sceen Fade Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+--- !u!4 &980744582 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5147722183782146065, guid: b81ef04c95bb01c47b7309079f756879, type: 3}
+  m_PrefabInstance: {fileID: 980744581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982774674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,7 +1642,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 1.6666666
+  m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8962507b216032d49b399dd0f4d13ea7, type: 2}
   m_BuildHeightMesh: 0

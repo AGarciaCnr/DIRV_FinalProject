@@ -7,7 +7,7 @@ public class SceneManagerCatchaRobot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.Instance.locateFade();
     }
 
     // Update is called once per frame
@@ -18,6 +18,6 @@ public class SceneManagerCatchaRobot : MonoBehaviour
 
     public void win()
     {
-        //Llamar función de ganar
+        GameManager.Instance.GoNextScene();
     }
 }
