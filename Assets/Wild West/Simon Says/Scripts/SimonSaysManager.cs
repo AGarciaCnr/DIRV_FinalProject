@@ -67,7 +67,7 @@ public class SimonSaysManager : MonoBehaviour
             yield return new WaitForSeconds(1f); // Tiempo entre rondas
         }
         Debug.Log("¡Has ganado!");
-        GameManager.Instance.SceneCompleted();
+        GameManager.Instance.GoNextScene();
     }
 
     private void AddRandomDrinkToSequence()

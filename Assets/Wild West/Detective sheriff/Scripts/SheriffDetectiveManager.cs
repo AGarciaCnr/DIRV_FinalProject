@@ -30,6 +30,7 @@ public class SheriffDetectiveManager : MonoBehaviour
         if (_gameOver)
         {
             Debug.Log("El juego ha terminado");
+            GameManager.Instance.GoNextScene();
         }
     }
 

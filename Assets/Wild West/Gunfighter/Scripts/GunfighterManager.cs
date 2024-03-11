@@ -22,6 +22,7 @@ public class GunfighterManager : MonoBehaviour
         {
             Debug.Log("Todos los barriles han sido destruidos");
             Debug.Log("¡Has ganado!");
+            GameManager.Instance.GoNextScene();
         }
     }
 
