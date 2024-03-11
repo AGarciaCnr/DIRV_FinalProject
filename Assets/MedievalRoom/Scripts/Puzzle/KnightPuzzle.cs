@@ -8,6 +8,7 @@ public class KnightPuzzle : MonoBehaviour
     public int SocketActiveCounter = 0;
     public List<GameObject> SocketObjects = new List<GameObject>();
     public InteractionLayerMask newInteractionLayerMask;
+    public bool PuzzleComplete = false;
 
     public void StartPuzzle()
     {
@@ -16,6 +17,14 @@ public class KnightPuzzle : MonoBehaviour
             XRSocketInteractor GetGrabInteractable = o.GetComponent<XRSocketInteractor>();
 
             GetGrabInteractable.interactionLayers = newInteractionLayerMask;
+        }
+    }
+
+    public void CheckIfPuzzleComplete()
+    {
+        if (SocketActiveCounter >= 11)
+        {
+            PuzzleComplete = true;
         }
     }
 }

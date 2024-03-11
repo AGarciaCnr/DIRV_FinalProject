@@ -89,5 +89,21 @@ public class SceneManagerMedievalRoom : MonoBehaviour
             // Set hasWon to true to indicate that the win condition has been met
             hasWon = true;
         }
+
+        if (axeTrainingScript.TrainingAxeComplete && !hasWon)
+        {
+            // Call Win() only if TrainingSwordComplete is true and hasWon is false
+            Win();
+            // Set hasWon to true to indicate that the win condition has been met
+            hasWon = true;
+        }
+
+        if (knightPuzzle.PuzzleComplete && !hasWon)
+        {
+            // Call Win() only if TrainingSwordComplete is true and hasWon is false
+            Win();
+            // Set hasWon to true to indicate that the win condition has been met
+            hasWon = true;
+        }
     }
 }
