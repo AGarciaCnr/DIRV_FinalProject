@@ -19,11 +19,15 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     public float DelaySecondTraining = 0f;
     public float DelayThirdTraining = 0f;
 
+    private bool hasWon = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager.Instance.locateFade();
+        // Hide the cursor
+        Cursor.visible = false;
     }
 
     private void StartSwordTraining()
@@ -49,15 +53,8 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     {
         if (SwordTrainingRun)
         {
-            if (!swordTrainingScript.TrainingSwordComplete)
-            {
-                yield return new WaitForSeconds(DelayFirstTraining);
-                StartSwordTraining();
-            }
-            else
-            {
-                GameManager.Instance.GoNextScene();
-            }
+            yield return new WaitForSeconds(DelayFirstTraining);
+            StartSwordTraining();
         }
 
         if (AxeTrainingRun)
@@ -75,10 +72,22 @@ public class SceneManagerMedievalRoom : MonoBehaviour
         }
     }
 
+    public void Win()
+    {
+        GameManager.Instance.GoNextScene();
+    }
 
     // Update is called once per frame
     void Update()
     {
         StartCoroutine(StartGame());
+
+        if (swordTrainingScript.TrainingSwordComplete && !hasWon)
+        {
+            // Call Win() only if TrainingSwordComplete is true and hasWon is false
+            Win();
+            // Set hasWon to true to indicate that the win condition has been met
+            hasWon = true;
+        }
     }
 }
