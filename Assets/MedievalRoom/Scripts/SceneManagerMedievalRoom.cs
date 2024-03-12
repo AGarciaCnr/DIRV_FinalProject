@@ -21,6 +21,7 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
     private bool hasWon = false;
 
+    public SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,11 @@ public class SceneManagerMedievalRoom : MonoBehaviour
         if (SwordTrainingRun)
         {
             yield return new WaitForSeconds(DelayFirstTraining);
+
+            StartCoroutine(soundManager.PlayClip(0, 0)); // Welcome Message
+
+            soundManager.PlayClip(1, 2); // Mission 01
+
             StartSwordTraining();
         }
 
