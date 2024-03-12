@@ -44,7 +44,9 @@ public class GameManager : Singleton<GameManager>
     //    SceneManager.LoadScene(scenes[currentSceneIndex]);
     //}
 
-    //-----------------------------------------------------------------------------------
+    
+
+    //-------------------------- Cambio de escena ----------------------------------------
 
     public FadeScreen fadeScreen;
     private int sceneIndex;
@@ -68,6 +70,37 @@ public class GameManager : Singleton<GameManager>
         // Launch the new scene
         SceneManager.LoadScene(sceneIndex);
     }
+
+    //--------------------------- Calculadora de tiempos --------------------------------
+
+    private float timeStart;
+    private float timeEnd;
+    private float sceneTime;
+    private float totalTime;
+
+    public void StartTimer()
+    {
+        timeStart = Time.time;
+    }
+
+    public void StopTimer()
+    {
+        timeEnd = Time.time;
+        sceneTime = timeEnd - timeStart;
+        totalTime += sceneTime;
+        Debug.Log("Total: " + sceneTime);
+    }
+
+    public void showTime()
+    {
+        Debug.Log("Total: " + totalTime);
+    }
+
+    public void saveTime()
+    {
+        PlayerPrefs.SetFloat("BestTime", totalTime);
+    }
+
 
     //public void GoToSceneAsync(int sceneIndex)
     //{

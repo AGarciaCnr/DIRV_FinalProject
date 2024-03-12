@@ -8,6 +8,7 @@ public class SceneManagerRockLeaper : MonoBehaviour
     void Start()
     {
         GameManager.Instance.locateFade();
+        GameManager.Instance.StartTimer();
     }
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class SceneManagerRockLeaper : MonoBehaviour
 
     public void win()
     {
+        GameManager.Instance.StopTimer();
         GameManager.Instance.GoNextScene();
     }
 }
