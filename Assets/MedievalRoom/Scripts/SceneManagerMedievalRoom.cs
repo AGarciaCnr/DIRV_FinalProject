@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SceneManagerMedievalRoom : MonoBehaviour
 {
+    public TextMeshPro timeText;
+
     [Header("Training Sections")]
     public SwordTraining swordTrainingScript;
     public ThrowingTraining axeTrainingScript;
@@ -22,11 +25,13 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     private bool hasWon = false;
 
     public SoundManager soundManager;
+    public FadeScreen fadeScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager.Instance.locateFade();
+        GameManager.Instance.StartTimer();
         // Hide the cursor
         Cursor.visible = false;
     }
@@ -34,8 +39,11 @@ public class SceneManagerMedievalRoom : MonoBehaviour
     private void StartSwordTraining()
     {
         swordTrainingScript.gameObject.SetActive(true);
-        swordTrainingScript.StartSwordTraning();
-        //GameManager.Instance.GoNextScene;
+
+        if (!swordTrainingScript.TrainingSwordComplete)
+        {
+            swordTrainingScript.StartSwordTraning();
+        }
     }
 
     private void StartKnightPuzzle()
@@ -80,6 +88,13 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
     public void Win()
     {
+        GameManager.Instance.StopTimer();
+
+        timeText.text = ("Tu tiempo: " + GameManager.Instance.getTime().ToString("F2"));
+        timeText.gameObject.SetActive(true);
+
+        fadeScreen.fadeDuration = 3;
+
         GameManager.Instance.GoNextScene();
     }
 
