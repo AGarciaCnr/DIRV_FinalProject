@@ -25,7 +25,6 @@ public class SceneManagerDetectorMetales : MonoBehaviour
     {
         GameManager.Instance.StopTimer();
 
-        timeText.gameObject.SetActive(true);
         timeText.text = ("Tu tiempo: " + GameManager.Instance.getTime().ToString("F2"));
         timeText.gameObject.SetActive(true);     
 
