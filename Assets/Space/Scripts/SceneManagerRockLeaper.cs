@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SceneManagerRockLeaper : MonoBehaviour
@@ -11,15 +12,16 @@ public class SceneManagerRockLeaper : MonoBehaviour
         GameManager.Instance.StartTimer();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public TextMeshPro timeText;
 
     public void win()
     {
         GameManager.Instance.StopTimer();
+
+        timeText.gameObject.SetActive(true);
+        timeText.text = ("Tu tiempo: " + GameManager.Instance.getTime().ToString("F2"));
+        timeText.gameObject.SetActive(true);
+
         GameManager.Instance.GoNextScene();
     }
 }

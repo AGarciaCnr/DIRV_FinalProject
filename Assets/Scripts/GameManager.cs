@@ -91,9 +91,9 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("Total: " + sceneTime);
     }
 
-    public void showTime()
+    public float getTime()
     {
-        Debug.Log("Total: " + totalTime);
+        return sceneTime;
     }
 
     public void saveTime()
