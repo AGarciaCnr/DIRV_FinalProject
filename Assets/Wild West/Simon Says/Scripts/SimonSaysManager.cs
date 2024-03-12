@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 public class SimonSaysManager : MonoBehaviour
 {
+    public TextMeshPro timeText;
+
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _drinkingObject;
     [SerializeField] private int _numberOfRounds = 4;
@@ -25,6 +28,8 @@ public class SimonSaysManager : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.locateFade();
+        GameManager.Instance.StartTimer();
         StartGame();
     }
 
@@ -67,7 +72,8 @@ public class SimonSaysManager : MonoBehaviour
             yield return new WaitForSeconds(1f); // Tiempo entre rondas
         }
         Debug.Log("¡Has ganado!");
-        GameManager.Instance.GoNextScene();
+
+        SceneCompleted();
     }
 
     private void AddRandomDrinkToSequence()
@@ -127,5 +133,16 @@ public class SimonSaysManager : MonoBehaviour
         _currentSequence.Clear();
         _currentRound = 0;
         StartGame();
+    }
+
+    private void SceneCompleted()
+    {
+        GameManager.Instance.StopTimer();
+
+        timeText.gameObject.SetActive(true);
+        timeText.text = ("Tu tiempo: " + GameManager.Instance.getTime().ToString("F2"));
+        timeText.gameObject.SetActive(true);
+
+        GameManager.Instance.GoNextScene();
     }
 }

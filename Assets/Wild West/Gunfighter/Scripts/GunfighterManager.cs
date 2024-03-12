@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class GunfighterManager : MonoBehaviour
 {
+    public TextMeshPro timeText;
+
     [SerializeField] private GameObject _prefab; // El _prefab que deseas instanciar
     [SerializeField] private int _numberOfInstances = 10; // El número de instancias que deseas crear
 
@@ -12,6 +15,8 @@ public class GunfighterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.locateFade();
+        GameManager.Instance.StartTimer();
         StartGame();
     }
 
@@ -22,7 +27,7 @@ public class GunfighterManager : MonoBehaviour
         {
             Debug.Log("Todos los barriles han sido destruidos");
             Debug.Log("¡Has ganado!");
-            GameManager.Instance.GoNextScene();
+            SceneCompleted();
         }
     }
 
@@ -32,7 +37,7 @@ public class GunfighterManager : MonoBehaviour
         for (int i = 0; i < _numberOfInstances; i++)
         {
             Vector3 randomPosition = RandomNavmeshLocation(10); // Genera una posición aleatoria en el NavMesh
-            GameObject barrelObject = Instantiate(_prefab, new Vector3(randomPosition.x, randomPosition.y + 0.3f, randomPosition.z), Quaternion.Euler(transform.rotation.eulerAngles.x + 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z)); // Instancia el _prefab en la posición generada
+            GameObject barrelObject = Instantiate(_prefab, new Vector3(randomPosition.x, randomPosition.y + 0.2f, randomPosition.z), Quaternion.Euler(transform.rotation.eulerAngles.x + 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z)); // Instancia el _prefab en la posición generada
             Barrel barrel = barrelObject.GetComponent<Barrel>();
             barrel.SetManager(this);
             _barrels.Add(barrel); // Añade el barril a la lista
@@ -58,5 +63,16 @@ public class GunfighterManager : MonoBehaviour
     {
         Debug.Log("Barrel: " + barrel.name + "destroyed");
         _barrels.Remove(barrel);
+    }
+
+    private void SceneCompleted()
+    {
+        GameManager.Instance.StopTimer();
+
+        timeText.gameObject.SetActive(true);
+        timeText.text = ("Tu tiempo: " + GameManager.Instance.getTime().ToString("F2"));
+        timeText.gameObject.SetActive(true);
+
+        GameManager.Instance.GoNextScene();
     }
 }
