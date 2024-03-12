@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,8 +45,6 @@ public class GameManager : Singleton<GameManager>
     //    SceneManager.LoadScene(scenes[currentSceneIndex]);
     //}
 
-    
-
     //-------------------------- Cambio de escena ----------------------------------------
 
     public FadeScreen fadeScreen;
@@ -58,7 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GoNextScene()
     {
-        sceneIndex++;
+        sceneIndex = (sceneIndex + 1) % 10;
         StartCoroutine(GoToSceneRoutine(sceneIndex));
     }
 
@@ -76,7 +75,7 @@ public class GameManager : Singleton<GameManager>
     private float timeStart;
     private float timeEnd;
     private float sceneTime;
-    private float totalTime;
+    public float totalTime;
 
     public void StartTimer()
     {
@@ -96,10 +95,10 @@ public class GameManager : Singleton<GameManager>
         return sceneTime;
     }
 
-    public void saveTime()
+/*    public void saveTime()
     {
         PlayerPrefs.SetFloat("BestTime", totalTime);
-    }
+    }*/
 
 
     //public void GoToSceneAsync(int sceneIndex)
