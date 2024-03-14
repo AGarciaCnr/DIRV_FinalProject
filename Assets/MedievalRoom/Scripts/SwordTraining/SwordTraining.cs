@@ -40,6 +40,7 @@ public class SwordTraining : MonoBehaviour
 
     // List to keep track of active dummies
     public List<GameObject> activeDummies = new List<GameObject>();
+    public GameObject activeSlicedDummiesGrp;
 
     private void Awake()
     {
@@ -127,6 +128,8 @@ public class SwordTraining : MonoBehaviour
 
     void dummyFadeIn()
     {
+        MakeTransparent[] SlicedDummies = activeSlicedDummiesGrp.GetComponentsInChildren<MakeTransparent>();
+
         foreach (GameObject dummy in activeDummies)
         {
             MakeTransparent[] dummyFade = dummy.GetComponentsInChildren<MakeTransparent>();
@@ -136,10 +139,17 @@ public class SwordTraining : MonoBehaviour
                 d.FadeIn(2.0f, 1.0f);
             }
         }
+
+        foreach (MakeTransparent d in SlicedDummies)
+        {
+            d.FadeIn(2.0f, 1.0f);
+        }
     }
     
     void dummyFadeOut()
     {
+        MakeTransparent[] SlicedDummies = activeSlicedDummiesGrp.GetComponentsInChildren<MakeTransparent>();
+
         foreach (GameObject dummy in activeDummies)
         {
             MakeTransparent[] dummyFade = dummy.GetComponentsInChildren<MakeTransparent>();
@@ -148,6 +158,12 @@ public class SwordTraining : MonoBehaviour
             {
                 d.FadeOut(2f, 1f);
             }
+        }
+
+
+        foreach (MakeTransparent d in SlicedDummies)
+        {
+            d.FadeOut(2.0f, 1.0f);
         }
     }
 
@@ -216,6 +232,14 @@ public class SwordTraining : MonoBehaviour
         foreach (GameObject dummy in activeDummies)
         {
             Destroy(dummy);
+        }
+
+        // Destroy all dummies
+        for (int i = 0; i < activeSlicedDummiesGrp.transform.childCount; i++)
+        {
+            GameObject child = activeSlicedDummiesGrp.transform.GetChild(i).gameObject;
+
+            Destroy(child);
         }
 
         activeDummies.Clear();

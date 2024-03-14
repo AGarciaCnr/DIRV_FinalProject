@@ -4,6 +4,7 @@ using UnityEngine.Rendering.Universal;
 public class Slicer : MonoBehaviour
 {
     public Material materialAfterSlice;
+    public GameObject parentObjectSliced;
     public LayerMask sliceMask;
     public bool isTouched; 
 
@@ -29,7 +30,7 @@ public class Slicer : MonoBehaviour
                 GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, materialAfterSlice);
 
                 // Parent the upper and lower hull to objectTobeSliced Parent GameObject
-                HullsGameObject.transform.parent = parentObjectTobeSliced;
+                HullsGameObject.transform.parent = parentObjectSliced.transform;
 
                 // Reset the local pos and rotation of HullsGameObject to zero
                 HullsGameObject.transform.localPosition = Vector3.zero;
@@ -46,8 +47,6 @@ public class Slicer : MonoBehaviour
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.rotation = objectToBeSliced.transform.rotation;
 
-
-
                 // Get Parent Object and add DummyObject, then Check Hulls is true
                 DummyObject dummyGroup = objectToBeSliced.transform.parent.gameObject.GetComponent<DummyObject>();
 
@@ -58,6 +57,7 @@ public class Slicer : MonoBehaviour
 
                 // Make it Physical
                 MakeItPhysical(upperHullGameobject);
+                MakeItPhysical(lowerHullGameobject);
 
                 // Destroy objectToBeSliced
                 Destroy(objectToBeSliced.gameObject);

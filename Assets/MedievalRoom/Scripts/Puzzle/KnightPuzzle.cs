@@ -18,11 +18,13 @@ public class KnightPuzzle : MonoBehaviour
 
             GetGrabInteractable.interactionLayers = newInteractionLayerMask;
         }
+
+        CheckIfPuzzleComplete();
     }
 
     public void CheckIfPuzzleComplete()
     {
-        if (SocketActiveCounter >= 11)
+        if (SocketActiveCounter >= 10)
         {
             PuzzleComplete = true;
         }

@@ -14,6 +14,8 @@ public class SheriffDetectiveManager : MonoBehaviour
 
     private bool _gameOver = false;
 
+    private bool _gameOverOnlyonce = false;
+
     private void Start()
     {
         GameManager.Instance.locateFade();
@@ -32,10 +34,12 @@ public class SheriffDetectiveManager : MonoBehaviour
             }
         }
 
-        if (_gameOver)
+        if (_gameOver && !_gameOverOnlyonce)
         {
             Debug.Log("El juego ha terminado");
             SceneCompleted();
+
+            _gameOverOnlyonce = true;
         }
     }
 

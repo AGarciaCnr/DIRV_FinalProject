@@ -66,15 +66,16 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
             StartCoroutine(soundManager.PlayClip(0, 0)); // Welcome Message
 
-            soundManager.PlayClip(1, 2); // Mission 01
-
             StartSwordTraining();
         }
 
         if (AxeTrainingRun)
         {
+            StartCoroutine(soundManager.PlayClip(0, 0)); // Welcome Message
+
             // Wait for the specified delay
             yield return new WaitForSeconds(DelaySecondTraining);
+
             StartAxeThrow();
         }
 
@@ -82,6 +83,9 @@ public class SceneManagerMedievalRoom : MonoBehaviour
         {
             // Wait for the specified delay
             yield return new WaitForSeconds(DelayThirdTraining);
+
+            StartCoroutine(soundManager.PlayClip(0, 0)); // Welcome Message
+
             StartKnightPuzzle();
         }
     }
@@ -105,6 +109,8 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
         if (swordTrainingScript.TrainingSwordComplete && !hasWon)
         {
+            StartCoroutine(soundManager.PlayClip(3, 0)); // Welcome Message
+
             // Call Win() only if TrainingSwordComplete is true and hasWon is false
             Win();
             // Set hasWon to true to indicate that the win condition has been met
@@ -113,6 +119,8 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
         if (axeTrainingScript.TrainingAxeComplete && !hasWon)
         {
+            StartCoroutine(soundManager.PlayClip(1, 0)); // Welcome Message
+
             // Call Win() only if TrainingSwordComplete is true and hasWon is false
             Win();
             // Set hasWon to true to indicate that the win condition has been met
@@ -121,6 +129,7 @@ public class SceneManagerMedievalRoom : MonoBehaviour
 
         if (knightPuzzle.PuzzleComplete && !hasWon)
         {
+            StartCoroutine(soundManager.PlayClip(1, 0)); // Welcome Message
             // Call Win() only if TrainingSwordComplete is true and hasWon is false
             Win();
             // Set hasWon to true to indicate that the win condition has been met

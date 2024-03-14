@@ -31,7 +31,7 @@ public class ThrowingTraining : MonoBehaviour
 
     bool readyToThrow;
 
-    private void Start()
+    private void Awake()
     {
         SpawnHatches();
     }
@@ -126,7 +126,7 @@ public class ThrowingTraining : MonoBehaviour
             // Check if the dummy is null
             if (i == null)
             {
-                continue; // Skip to the next iteration if the dummy is null
+                return false; // Skip to the next iteration if the dummy is null
             }
 
             if (!i.GetComponentInChildren<AxeTarget>().axeTarget)

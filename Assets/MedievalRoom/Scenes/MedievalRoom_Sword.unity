@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9243e33b2d8361b4f94490ff507a431c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 394772294}
-  m_IndirectSpecularColor: {r: 0.1834338, g: 0.22902144, b: 0.30595756, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.35409033, g: 0.3852638, b: 0.3776757, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1030,11 +1030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!108 &394772294 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8928097833894077615, guid: af25af2cb9c67f94696fb9653d4bee6f, type: 3}
-  m_PrefabInstance: {fileID: 7410115459104561074}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &412542813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5088,6 +5083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword_GRP
       objectReference: {fileID: 0}
+    - target: {fileID: 8059477954487631357, guid: da1a217c551d23c4ea900ab8dbbc0368, type: 3}
+      propertyPath: parentObjectSliced
+      value: 
+      objectReference: {fileID: 1325314731}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5467,6 +5466,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 197320202}
   m_SourcePrefab: {fileID: 100100000, guid: 740248c763f023546b61261125a71f0a, type: 3}
+--- !u!1 &1325314731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325314732}
+  m_Layer: 0
+  m_Name: DummiesSliced
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325314732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325314731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1582092434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350462756
 GameObject:
   m_ObjectHideFlags: 0
@@ -5517,6 +5547,8 @@ MonoBehaviour:
   audioSources:
   - {fileID: 8300000, guid: 1edfeda708e55254db0b25fee003ae81, type: 3}
   - {fileID: 8300000, guid: fa335f977890356429e6efac56c6b38c, type: 3}
+  - {fileID: 8300000, guid: fa335f977890356429e6efac56c6b38c, type: 3}
+  - {fileID: 8300000, guid: 05154263e1d1ce541a1f091291463104, type: 3}
   backgroundAudioSource: {fileID: 1350462759}
   audioSource: {fileID: 1350462760}
   audioCounterPosition: 0
@@ -6102,6 +6134,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6521407429067502975, guid: da1a217c551d23c4ea900ab8dbbc0368, type: 3}
   m_PrefabInstance: {fileID: 1246845864}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1472695796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472695798}
+  - component: {fileID: 1472695797}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1472695797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472695796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 82ed8a736a62a8a48926cf0cb0865372, type: 2}
+--- !u!4 &1472695798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472695796}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1477097496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7095,6 +7176,7 @@ Transform:
   - {fileID: 171107438}
   - {fileID: 465867452}
   - {fileID: 1508119169}
+  - {fileID: 1325314732}
   m_Father: {fileID: 1059325977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1582092435
@@ -7141,6 +7223,7 @@ MonoBehaviour:
   TrainingSwordComplete: 0
   currentLevel: 1
   activeDummies: []
+  activeSlicedDummiesGrp: {fileID: 1325314731}
 --- !u!1001 &1592354275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10176,22 +10259,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lighting
       objectReference: {fileID: 0}
-    - target: {fileID: 8928097833894077615, guid: af25af2cb9c67f94696fb9653d4bee6f, type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 1.74748e+31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8928097833894077615, guid: af25af2cb9c67f94696fb9653d4bee6f, type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8928097833894077615, guid: af25af2cb9c67f94696fb9653d4bee6f, type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 3.0055289e+31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8928097833894077615, guid: af25af2cb9c67f94696fb9653d4bee6f, type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 9.99e-43
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10207,3 +10274,4 @@ SceneRoots:
   - {fileID: 1059325977}
   - {fileID: 1350462757}
   - {fileID: 568969963}
+  - {fileID: 1472695798}

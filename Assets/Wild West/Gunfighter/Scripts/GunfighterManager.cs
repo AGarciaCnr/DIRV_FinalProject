@@ -12,6 +12,8 @@ public class GunfighterManager : MonoBehaviour
 
     private List<Barrel> _barrels; // Lista para llevar un registro de todos los barriles
 
+    private bool _gameOverBarrels = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,13 @@ public class GunfighterManager : MonoBehaviour
     void Update()
     {
         // Comprueba si todos los barriles han sido destruidos
-        if (_barrels.Count == 0)
+        if (_barrels.Count == 0 && !_gameOverBarrels)
         {
             Debug.Log("Todos los barriles han sido destruidos");
             Debug.Log("¡Has ganado!");
             SceneCompleted();
+
+            _gameOverBarrels = true;
         }
     }
 

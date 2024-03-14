@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 1
-  speedMultiplier: 5
+  speedMultiplier: 50
   rb: {fileID: 523024850}
   isLeftJetpack: 0
   isRightJetpack: 0
@@ -3849,7 +3849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 1
-  speedMultiplier: 5
+  speedMultiplier: 50
   rb: {fileID: 523024850}
   isLeftJetpack: 0
   isRightJetpack: 0
