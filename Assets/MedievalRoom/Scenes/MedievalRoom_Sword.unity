@@ -1341,9 +1341,9 @@ MonoBehaviour:
   SwordTrainingRun: 1
   AxeTrainingRun: 0
   KnightPuzzleTrainingRun: 0
-  DelayFirstTraining: 1
-  DelaySecondTraining: 2
-  DelayThirdTraining: 3
+  DelayFirstTraining: 0
+  DelaySecondTraining: 0
+  DelayThirdTraining: 0
   soundManager: {fileID: 1350462758}
   fadeScreen: {fileID: 1772344365}
 --- !u!1001 &569567658
@@ -7143,6 +7143,7 @@ MonoBehaviour:
   newInteractionLayerMask:
     m_Bits: 268435456
   PuzzleComplete: 0
+  meshOutline: {fileID: 0}
 --- !u!1 &1582092433
 GameObject:
   m_ObjectHideFlags: 0

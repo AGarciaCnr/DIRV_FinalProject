@@ -9,6 +9,7 @@ public class KnightPuzzle : MonoBehaviour
     public List<GameObject> SocketObjects = new List<GameObject>();
     public InteractionLayerMask newInteractionLayerMask;
     public bool PuzzleComplete = false;
+    public GameObject meshOutline;
 
     public void StartPuzzle()
     {
@@ -20,6 +21,8 @@ public class KnightPuzzle : MonoBehaviour
         }
 
         CheckIfPuzzleComplete();
+
+        meshOutline.SetActive(true);
     }
 
     public void CheckIfPuzzleComplete()
