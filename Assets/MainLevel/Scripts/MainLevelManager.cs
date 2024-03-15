@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class MainLevelManager : MonoBehaviour
 {
     [SerializeField] private TextMeshPro bestScoreText;
+    [SerializeField] private GameObject ball;
 
     void Start()
     {
@@ -15,6 +17,7 @@ public class MainLevelManager : MonoBehaviour
             {
                 PlayerPrefs.SetFloat("BestTime", GameManager.Instance.totalTime);
             }
+            ball.GetComponent<XRGrabInteractable>().enabled = true;
         }
 
         if (PlayerPrefs.HasKey("BestTime"))
